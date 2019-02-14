@@ -290,6 +290,7 @@ public class APIV3Test extends AbstractTest {
         }
     }
 
+    @Test
     public void login() throws Exception {
         String uri = "/api/v3/merchant/user/login";
 
@@ -319,6 +320,7 @@ public class APIV3Test extends AbstractTest {
         assertEquals(StatusEnum.APPROVED.toString(), tokenResponse.getStatus());
     }
 
+    @Test
     public void transactionReport() throws Exception {
         String uri = "/api/v3/transactions/report";
 
@@ -393,6 +395,7 @@ public class APIV3Test extends AbstractTest {
         assertEquals(transactionUUID, transactionInfo.getTransaction().getTransactionUUID());
     }
 
+    @Test
     public void client() throws Exception {
         String uri = "/api/v3/client";
 
