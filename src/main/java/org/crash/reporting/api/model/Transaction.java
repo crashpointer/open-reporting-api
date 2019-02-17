@@ -184,6 +184,10 @@ public class Transaction extends DateAudit {
     @Column(length = 256)
     private String customData;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "error_code_id")
+    private ErrorCode errorCode;
+
     public int getId() {
         return id;
     }
@@ -360,4 +364,11 @@ public class Transaction extends DateAudit {
         this.customData = customData;
     }
 
+    public ErrorCode getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(ErrorCode errorCode) {
+        this.errorCode = errorCode;
+    }
 }
